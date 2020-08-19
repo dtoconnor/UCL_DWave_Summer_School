@@ -2,7 +2,7 @@
 Quantum Annealer can be used to solve a host of optimization problems when framed within the context of the Ising model: 
 
 <p align="center">
-  <img align="centre" src="https://render.githubusercontent.com/render/math?math=H = \sum_{ij} J_{ij} \sigma^z_i \sigma^z_j %2B \sum_i h_i \sigma_i^z" />
+  <img align="centre" src="https://render.githubusercontent.com/render/math?math=H_{Ising} = \sum_{ij} J_{ij} \sigma^z_i \sigma^z_j %2B \sum_i h_i \sigma_i^z" />
  </p>
 
 Using Python and the D-Wave 2000Q quantum annealer, this repository looks at error correction of ASCII messages sent over a noisy channel.
