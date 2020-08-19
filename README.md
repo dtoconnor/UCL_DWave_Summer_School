@@ -64,9 +64,7 @@ Have a play with this code and make sure that you understand its key features. H
 ## Task 3: Degenerate Hamiltonian 
 Everything we have discussed so-far looks pretty classical: is the D-Wave machine really a quantum computer? To address this question at UCL we worked on a highly-degenerate 8-spin Hamiltonian which has 17 different minimum energy solutions. The Hamiltonian consists of a ring of four spins, with each spin coupled ferromagnetically to its two immediate neighbours in the ring. In addition, each of the four spins in the ring is coupled ferromagnetically to one additional “ancilla” spin (not in the ring). The local fields for all the spins in the ring point in one direction while the local fields for all the ancilla spins point in the opposite direction.
 
-<p align="center">
-  ![Degenerate Hamiltonian](degenerate_problem.png)
-</p>
+ ![Degenerate Hamiltonian](degenerate_problem.png)
 
 Programme this system using the graphical interface. Set all eight couplers to -1, the local fields on the four ring spins to +1 and the local fields on the four ancilla spins to -1. You should find 17 ground states, of which one seems not to occur very frequently. (You might need to run this a few times and keep a tally!) This so-called “isolated” state (in which all eight spins point in the same direction) can only be accessed from the other 16 states by classical thermal fluctuations. In other words the fact that the isolated state does not occur very often supports the conclusion that quantum mechanics is playing a role in the D-Wave machine. 
 
