@@ -17,7 +17,7 @@ To complete all tasks in this repo, copy and paste the following links into your
 
 ## Task 1: GUI
 ### Basic Operations
-Go to **solver visualizer - submit problems**, and select preferred settings before viewing graph data. From here you will select two adjacent qubits on the QPU (quantum processing unit) and experiment with the following four scenarios of the two spin system:
+Go to **solver visualizer - submit problems** in the D-Wave Qubist GUI, and select preferred settings before viewing graph data. From here you will select two adjacent qubits on the QPU (quantum processing unit) and experiment with the following four scenarios of the two spin system:
 1. Two spins coupled by a ferromagnetic interaction (J = -1) with no local fields
 2. Two spins coupled by an anti-ferromagnetic interaction (J = 1) with no local fields
 3. Two spins coupled by a ferromagnetic interaction (J = -1) with a small local field (say h = 0.2) on one of the spins
@@ -40,7 +40,7 @@ Which is equal to the original Ising Hamiltonian with new bias and coupling valu
  
 Therefore the D-Wave not only solves the requested problem but spin-reversal forms of it as well. This allows the D-Wave machine can minimize some of the in-built asymmetries which you may have noticed earlier on.
 
-Now try running some of the previous two-spin Hamiltonians (especially scenario 4), this time incorporating spin-reversal transforms. To do this, specify the number of spin-reversal transforms in the **Submit Problem Configuration – Parameters** window. This should be at most 2n – *i.e.* four! *Are the results now more evenly distributed across the degenerate ground-state spin configurations?*
+Now try running some of the previous two-spin Hamiltonians (especially scenario 4), this time incorporating spin-reversal transforms. To do this, specify the number of spin-reversal transforms in the **Submit Problem Configuration – Parameters** window. This should be at most 2^n – *i.e.* four! *Are the results now more evenly distributed across the degenerate ground-state spin configurations?*
  
 
 ## Task 2: Error correction
