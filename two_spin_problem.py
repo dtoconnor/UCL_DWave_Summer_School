@@ -28,4 +28,4 @@ sampler = EmbeddingComposite(DWaveSampler(solver=dict(qpu=True)))
 
 response = sampler.sample_ising(h, J, num_reads=1000, num_spin_reversal_transforms=0)
 
-dwave.inspector.show(response)
+dwi.show(response)
