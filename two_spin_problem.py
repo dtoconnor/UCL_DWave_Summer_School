@@ -3,7 +3,7 @@ from dwave.system.composites import EmbeddingComposite
 import dwave.inspector as dwi
 
 """
-Follow the four scenarios listed in the Readme by changing the variables in this file
+Follow the four scenarios listed in task 1 by changing the variables in this file
 
 qubit_1   qubit_2
 
