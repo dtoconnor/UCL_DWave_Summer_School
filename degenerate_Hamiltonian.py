@@ -11,7 +11,7 @@ couplers = [(i, (i + 1) % 4) for i in inner_qubits] + list(zip(inner_qubits, out
 alpha = 1
 
 h_list = np.array([1] * len(inner_qubits) + [-1] * len(outer_qubits))
-h_list = alpha * h_list
+h_list *= alpha
 
 h = dict(enumerate(h_list)
 J = {couple: -1 * alpha for couple in couplers}
