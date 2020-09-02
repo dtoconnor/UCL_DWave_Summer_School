@@ -13,7 +13,7 @@ alpha = 1
 h_list = np.array([1] * len(inner_qubits) + [-1] * len(outer_qubits))
 h_list *= alpha
 
-h = dict(enumerate(h_list)
+h = dict(enumerate(h_list))
 J = {couple: -1 * alpha for couple in couplers}
 
 sampler = EmbeddingComposite(DWaveSampler(solver=dict(qpu=True)))
