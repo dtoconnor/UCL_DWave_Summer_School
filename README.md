@@ -12,13 +12,12 @@ Where h and J are the spin bias and couplings respectively. Using Python and the
 ## Setup
 To complete all tasks in this repo, copy and paste the following links into your browser, logging into to each of the services:
 - Leap Account: ```https://cloud.dwavesys.com/leap/```
-- D-Wave GUI: ```https://cloud.dwavesys.com/qubist/```
 - D-Wave IDE with this repo: ```https://ide.dwavesys.io/#https://github.com/dtoconnor/UCL_DWave_Summer_School```
 
 ## Task 1: GUI
 ### Basic Operations
-Go to **solver visualizer - submit problems** in the D-Wave Qubist GUI, and select preferred settings before viewing graph data. From here you will select two adjacent qubits on the QPU (quantum processing unit) and experiment with the following four scenarios of the two spin system:
-1. Two spins coupled by a ferromagnetic interaction (J = -1) with no local fields
+Go to ``two_spin_problem.py`` file and look at the basic two spin problem set out in the code. From here you will be able to use the D-Wave problem inspector to analyse each of the following four scenarios of the two spin system:
+1. Two spins coupled by a ferromagnetic interaction (J = -1) with no local fields (preset in the code)
 2. Two spins coupled by an anti-ferromagnetic interaction (J = 1) with no local fields
 3. Two spins coupled by a ferromagnetic interaction (J = -1) with a small local field (say h = 0.2) on one of the spins
 4. Two spins coupled by a ferromagnetic interaction (J = -1) with local fields of magnitude 1 pointing in opposite directions on the two spins. This is known as a **frustrated system** since it’s not possible for all three constraints (the ferromagnetic interaction and the two local fields) to be simultaneously satisfied. Such systems typically have many lowest energy solutions – what a physicist would call a multiply-degenerate ground state
@@ -40,7 +39,7 @@ Which is equal to the original Ising Hamiltonian with new bias and coupling valu
  
 Therefore the D-Wave not only solves the requested problem but spin-reversal forms of it as well. This allows the D-Wave machine can minimize some of the in-built asymmetries which you may have noticed earlier on.
 
-Now try running some of the previous two-spin Hamiltonians (especially scenario 4), this time incorporating spin-reversal transforms. To do this, specify the number of spin-reversal transforms in the **Submit Problem Configuration – Parameters** window. This should be at most 2^n – *i.e.* four! *Are the results now more evenly distributed across the degenerate ground-state spin configurations?*
+Now try running some of the previous two-spin Hamiltonians (especially scenario 4), this time incorporating spin-reversal transforms. To do this change the `num_spin_reversal_transforms` flag in the `sample_ising` command. This should be at most 2^n – *i.e.* four! *Are the results now more evenly distributed across the degenerate ground-state spin configurations?*
  
 
 ## Task 2: Error correction
@@ -66,8 +65,8 @@ Everything we have discussed so-far looks pretty classical: is the D-Wave machin
 
  ![Degenerate Hamiltonian](degenerate_problem.png)
 
-Programme this system using the graphical interface. Set all eight couplers to -1, the local fields on the four ring spins to +1 and the local fields on the four ancilla spins to -1. You should find 17 ground states, of which one seems not to occur very frequently. (You might need to run this a few times and keep a tally!) This so-called “isolated” state (in which all eight spins point in the same direction) can only be accessed from the other 16 states by classical thermal fluctuations. In other words the fact that the isolated state does not occur very often supports the conclusion that quantum mechanics is playing a role in the D-Wave machine. 
+Using ``degenerate_Hamiltonian.py``, set all eight couplers to -1, the local fields on the four ring spins to +1 and the local fields on the four ancilla spins to -1. You should find 17 ground states, of which one seems not to occur very frequently. (You might need to run this a few times and keep a tally!) This so-called “isolated” state (in which all eight spins point in the same direction) can only be accessed from the other 16 states by classical thermal fluctuations. In other words the fact that the isolated state does not occur very often supports the conclusion that quantum mechanics is playing a role in the D-Wave machine. 
 
-Now, as a control experiment, we want to increase the role of classical thermal fluctuations to see what happens to the isolated state. This you can do by changing all the values of the couplers to -0.1 and the local fields to ±0.1. This reduces the energy scale of the entire Hamiltonian. Since the D-Wave machine sits at a fixed temperature (around 20 mK), the net effect is to increase the effect of thermal fluctuations. What happens to the isolated state now?
+Now, as a control experiment, we want to increase the role of classical thermal fluctuations to see what happens to the isolated state. This you can do by changing the thermal control parameter *alpha* such that it scales all the values of the couplers and the local fields to ±0.1. This reduces the energy scale of the entire Hamiltonian. Since the D-Wave machine sits at a fixed temperature (around 20 mK), the net effect is to increase the effect of thermal fluctuations. What happens to the isolated state now?
 
 
