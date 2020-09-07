@@ -1,7 +1,5 @@
 """
-Author: Victoria Goliber  
-Maintainer: Daniel O'Connor
-Email: uceedto@ucl.ac.uk
+Author: Victoria Goliber
 Description: Error correction of ASCII messages sent over a noisy channel, using the D-Wave 2000Q
 """
 
