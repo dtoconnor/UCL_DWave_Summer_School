@@ -1,3 +1,10 @@
+"""
+Author: Victoria Goliber  
+Maintainer: Daniel O'Connor
+Email: uceedto@ucl.ac.uk
+Description: Error correction of ASCII messages sent over a noisy channel, using the D-Wave 2000Q
+"""
+
 from dwave.system.samplers import DWaveSampler
 from dwave.system.composites import EmbeddingComposite
 import networkx as nx
