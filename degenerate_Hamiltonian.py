@@ -16,7 +16,7 @@ physical_couplers = [(physical_qubits[i], physical_qubits[j]) for (i, j) in logi
 # thermal control parameter, 0 < alpha <= 1 
 alpha = 1
 
-h_list = np.array([1] * len(inner_qubits) + [-1] * len(outer_qubits))
+h_list = np.array([1] * len(inner_qubits) + [-1] * len(outer_qubits)).astype(np.float64)
 h_list *= alpha
 
 h = {q: h_list[i] for i, q in enumerate(physical_qubits)}
