@@ -11,12 +11,20 @@ import dwave_networkx as dnx
 import numpy as np
 
 # Set up our connection to the D-Wave Computer
-solver = EmbeddingComposite(DWaveSampler())
-print("\nConnected to", solver.properties['child_properties']['chip_id'])
+from dwave.system.samplers import DWaveSampler
+from dwave.system.composites import EmbeddingComposite
+import networkx as nx
+import dwave_networkx as dnx
+import numpy as np
+
+# Set up our connection to the D-Wave Computer
+dwave_sampler = DWaveSampler(solver=dict(qpu=True))
+sampler = EmbeddingComposite(dwave_sampler)
+print("\nConnected to", sampler.properties['child_properties']['chip_id'])
 
 # Find good cell indices, i.e. cells without missing qubits/couplers, in the online D-Wave chip
 G = nx.Graph()
-G.add_edges_from(DWaveSampler().edgelist)
+G.add_edges_from(dwave_sampler.edgelist)
 goodcellindices = []
 for q in range(0, 2048, 8):
     if all((i, j) in G.edges for i in range(q, q+4) for j in range(q+4, q+8)):
@@ -110,7 +118,7 @@ h = {x:y for x,y in h.items() if y!=0}
 J = {(row,col): jshift[row,col] for row in range(2048) for col in range(2048)}
 J = {x:y for x,y in J.items() if y!=0}
 
-answer = solver.sample_ising(h, J, num_reads=10)
+answer = sampler.sample_ising(h, J, num_reads=10)
 print("\nD-Wave System Response:\n",answer)
 
 spins = answer.record.sample[0]
