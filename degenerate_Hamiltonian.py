@@ -23,7 +23,8 @@ h = {q: h_list[i] for i, q in enumerate(physical_qubits)}
 J = {couple: -alpha for couple in physical_couplers}
 
 
-sampler = DWaveSampler(solver=dict(qpu=True))
+# sampler = DWaveSampler(solver=dict(qpu=True))   # use if function below fails, will call any available quantum processor
+sampler = DWaveSampler(solver=dict(name="DW_2000Q_6"))
 
 response = sampler.sample_ising(h, J, num_reads=1000, num_spin_reversal_transforms=0)
 print(response.aggregate())
