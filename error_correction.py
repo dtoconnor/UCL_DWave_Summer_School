@@ -18,7 +18,8 @@ import dwave_networkx as dnx
 import numpy as np
 
 # Set up our connection to the D-Wave Computer
-dwave_sampler = DWaveSampler(solver=dict(qpu=True))
+# dwave_sampler = DWaveSampler(solver=dict(qpu=True))   # use if function below fails, will call any available quantum processor
+dwave_sampler = DWaveSampler(solver=dict(name="DW_2000Q_6"))
 sampler = EmbeddingComposite(dwave_sampler)
 print("\nConnected to", sampler.properties['child_properties']['chip_id'])
 
