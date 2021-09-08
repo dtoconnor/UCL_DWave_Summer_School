@@ -28,7 +28,7 @@ Go to ``two_spin_problem.py`` file and look at the basic two spin problem set ou
 1. Two spins coupled by a ferromagnetic interaction (J = -1) with no local fields (preset in the code)
 2. Two spins coupled by an anti-ferromagnetic interaction (J = 1) with no local fields
 3. Two spins coupled by a ferromagnetic interaction (J = -1) with a small local field (say h = 0.2) on one of the spins
-4. Two spins coupled by a ferromagnetic interaction (J = -1) with local fields of magnitude 1 pointing in opposite directions on the two spins. This is known as a **frustrated system** since it’s not possible for all three constraints (the ferromagnetic interaction and the two local fields) to be simultaneously satisfied. Such systems typically have many lowest energy solutions – what a physicist would call a multiply-degenerate ground state
+4. Two spins coupled by a ferromagnetic interaction (J = -1) with local fields of magnitude 1 pointing in opposite directions on the two spins. This is known as a **frustrated system** since it’s not possible for all three constraints (the ferromagnetic interaction and the two local fields) to be simultaneously satisfied. Such systems typically have multiple lowest energy solutions – what a physicist would call a multiply-degenerate ground state.
 
 It is recommended you do 1000 reads of the system when submitting the problem to get an idea of the solution frequency. From this you will identify why the D-Wave has returned the solutions that you now see for each of the four problems, and try to identify why some solutions are more preferable than others (especially scenario 4).
 
