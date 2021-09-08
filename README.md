@@ -10,9 +10,13 @@ Quantum Annealers can be used to solve a host of optimization problems when fram
 Where h and J are the spin bias and couplings respectively. Using Python and the D-Wave 2000Q quantum annealer, this repository looks at error correction of ASCII messages sent over a noisy channel, and the physics of quantum annealing.
 
 ## Setup
-To complete all tasks in this repo, copy and paste the following links into your browser, logging into to each of the services:
-- Leap Account: ```https://cloud.dwavesys.com/leap/```
-- D-Wave IDE with this repo: ```https://ide.dwavesys.io/#https://github.com/dtoconnor/UCL_DWave_Summer_School```
+Complete the following steps to start all tasks in this repo:
+1. Login to your Leap Account: ```https://cloud.dwavesys.com/leap/```
+2. Look for the projects tab indicated below. If this does not appear, please check your email for an invitation to this project (including junk/spam folders).
+![Setup 1](choosing_project1.JPG)
+3. Under the projects tab should be the UCL Summer School 2021 project. Select this project before completing step 5.
+![Setup 2](choosing_project2.JPG)
+5. Launch the D-Wave IDE with this repo by pasting the following link into your browser: ```https://ide.dwavesys.io/#https://github.com/dtoconnor/UCL_DWave_Summer_School```
 
 ## Task 1: GUI
 ### Basic Operations
