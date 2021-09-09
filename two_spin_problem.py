@@ -24,8 +24,8 @@ J_val = -1
 h = {qubit_1: h_1, qubit_2: h_2}
 J = {(qubit_1, qubit_2): J_val}
 
-# sampler = EmbeddingComposite(DWaveSampler(solver=dict(qpu=True)))   # use if function below fails, will call any available quantum processor
-sampler = EmbeddingComposite(DWaveSampler(solver=dict(name="DW_2000Q_6")))
+sampler = EmbeddingComposite(DWaveSampler(solver=dict(qpu=True)))   # use if function below fails, will call any available quantum processor
+# sampler = EmbeddingComposite(DWaveSampler(solver=dict(name="DW_2000Q_6")))
 
 response = sampler.sample_ising(h, J, num_reads=1000, num_spin_reversal_transforms=0)
 print(response.aggregate())
