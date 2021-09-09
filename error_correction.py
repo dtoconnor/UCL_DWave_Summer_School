@@ -18,14 +18,19 @@ import dwave_networkx as dnx
 import numpy as np
 
 # Set up our connection to the D-Wave Computer
-# dwave_sampler = DWaveSampler(solver=dict(qpu=True))   # use if function below fails, will call any available quantum processor
-dwave_sampler = DWaveSampler(solver=dict(name="DW_2000Q_6"))
+dwave_sampler = DWaveSampler(solver=dict(qpu=True))   # use if function below fails, will call any available quantum processor
+# dwave_sampler = DWaveSampler(solver=dict(name="DW_2000Q_6"))
 sampler = EmbeddingComposite(dwave_sampler)
 print("\nConnected to", sampler.properties['child_properties']['chip_id'])
 
+
+# Please note this code was originally built for the D-Wave 2000Q, but today we are using the 
+# Advantage machine with over 5000 qubits, so here we embed the 2000Q chimera architecture into 
+# the Advantage pegasus architecture
+
 # Find good cell indices, i.e. cells without missing qubits/couplers, in the online D-Wave chip
-G = nx.Graph()
-G.add_edges_from(dwave_sampler.edgelist)
+G = dnx.chimera_graph(16, 16, 4)
+# G.add_edges_from(dwave_sampler.edgelist)
 goodcellindices = []
 for q in range(0, 2048, 8):
     if all((i, j) in G.edges for i in range(q, q+4) for j in range(q+4, q+8)):
