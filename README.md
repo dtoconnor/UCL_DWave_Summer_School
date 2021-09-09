@@ -69,7 +69,7 @@ Have a play with this code and make sure that you understand its key features. H
 
 
 ## Task 3: Degenerate Hamiltonian 
-Everything we have discussed so-far looks pretty classical: is the D-Wave machine really a quantum computer? To address this question at UCL we worked on a highly-degenerate 8-spin Hamiltonian which has 17 different minimum energy solutions. The Hamiltonian consists of a ring of four spins, with each spin coupled ferromagnetically to its two immediate neighbours in the ring. In addition, each of the four spins in the ring is coupled ferromagnetically to one additional “ancilla” spin (not in the ring). The local fields for all the spins in the ring point in one direction while the local fields for all the ancilla spins point in the opposite direction.
+Everything we have discussed so-far looks pretty classical: is the D-Wave machine really a quantum computer? To address this question at UCL we worked on a highly-degenerate 8-spin Hamiltonian which has 17 different minimum energy solutions (see https://arxiv.org/abs/1403.4228). The Hamiltonian consists of a ring of four spins, with each spin coupled ferromagnetically to its two immediate neighbours in the ring. In addition, each of the four spins in the ring is coupled ferromagnetically to one additional “ancilla” spin (not in the ring). The local fields for all the spins in the ring point in one direction while the local fields for all the ancilla spins point in the opposite direction.
 
  ![Degenerate Hamiltonian](degenerate_problem.png)
 
